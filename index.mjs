@@ -1,4 +1,3 @@
-import fetch from 'node-fetch';
 import cors from 'cors';
 import express from 'express';
 var app = express();
