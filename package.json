@@ -2,7 +2,7 @@
   "name": "temperate_api",
   "version": "1.0",
   "description": "Serves weather and daily images",
-  "main": "index.js",
+  "main": "index.mjs",
   "author": "Rohan Menon",
   "dependencies": {
     "@mapbox/node-pre-gyp": "^1.0.8",
