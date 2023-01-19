@@ -1,14 +1,14 @@
 {
     "builds": [
         {
-            "src": "index.mjs",
+            "src": "index.js",
             "use": "@now/node"
         }
     ],
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "index.mjs"
+            "dest": "index.js"
         }
     ]
 }

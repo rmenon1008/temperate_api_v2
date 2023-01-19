@@ -2,7 +2,7 @@
   "name": "temperate_api",
   "version": "1.0",
   "description": "Serves weather and daily images",
-  "main": "index.mjs",
+  "main": "index.js",
   "author": "Rohan Menon",
   "dependencies": {
     "@mapbox/node-pre-gyp": "^1.0.8",
@@ -15,8 +15,10 @@
     "fast-average-color-node": "^2.1.0",
     "hbs": "^4.2.0",
     "image-size": "^1.0.1",
+    "node-fetch-commonjs": "^3.2.4",
     "node-schedule": "^2.1.0",
     "save": "^2.4.0",
     "unsplash-js": "^7.0.15"
-  }
+  },
+  "type": "commonjs"
 }

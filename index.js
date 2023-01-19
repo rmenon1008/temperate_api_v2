@@ -1,5 +1,10 @@
-import cors from 'cors';
-import express from 'express';
+// import cors from 'cors';
+// import express from 'express';
+
+var cors = require('cors');
+var express = require('express');
+var fetch = require('node-fetch-commonjs');
+
 var app = express();
 
 app.set('view engine', 'hbs');
@@ -18,7 +23,7 @@ app.get("/weather/:loc", (req, res, next) => {
             });
         });
     } catch (error) {
-        next(err);
+        next(error);
     }
 });
 
@@ -42,7 +47,7 @@ app.get("/weather", (req, res, next) => {
             });
         });
     } catch (error) {
-        next(err);
+        next(error);
     }
 });
 
@@ -50,5 +55,5 @@ app.listen(3000, () => {
     console.log("Server running on port 3000");
 });
 
-// module.exports = app;
-export default app;
+module.exports = app;
+// export default app;
