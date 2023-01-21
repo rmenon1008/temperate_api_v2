@@ -51,7 +51,7 @@ app.get("/imageoptions", (req, res, next) => {
                 newOption = collection;
                 newOption.key = keys[i];
                 newOption.name = collection.title + ": " + collection.description;
-                newOption.preview = 'http://api.rohanmenon.com/static/images/' + keys[i] + '.png';
+                newOption.preview = 'http://api.rohanmenon.com/static/previews/' + keys[i] + '.png';
                 modified.push(newOption);
             }
         }
