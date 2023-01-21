@@ -1,6 +1,6 @@
 {
   "name": "temperate_api",
-  "version": "1.0",
+  "version": "2.0",
   "description": "Serves weather and daily images",
   "main": "index.js",
   "author": "Rohan Menon",
@@ -15,6 +15,7 @@
     "fast-average-color-node": "^2.1.0",
     "hbs": "^4.2.0",
     "image-size": "^1.0.1",
+    "jimp": "^0.16.2",
     "node-fetch-commonjs": "^3.2.4",
     "node-schedule": "^2.1.0",
     "save": "^2.4.0",

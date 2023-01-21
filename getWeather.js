@@ -46,11 +46,11 @@ function convertToOldFormat(newFormat) {
                 chance_of_snow: 0
             });
         }
+
+        return oldFormat;
     } catch (error) {
         console.log(error);
     }
-
-    return oldFormat;
 }
 
 const areLocationsClose = (l1, l2) => {

@@ -3,6 +3,7 @@ const express = require('express');
 const fetch = require('node-fetch-commonjs');
 
 const getWeather = require('./getWeather');
+const { updateAllCollections, updateSingleCollection, imageCollections } = require('./getImage');
 
 const app = express();
 // app.set('view engine', 'hbs');
@@ -39,8 +40,43 @@ app.get("/weather", (req, res, next) => {
     }
 });
 
+app.get("/imageoptions", (req, res, next) => {
+    try {
+        const keys = Object.keys(imageCollections);
+        let modified = [];
+        for (let i = 0; i < keys.length; i++) {
+            const collection = imageCollections[keys[i]];
+            if (!keys[i].includes('_')) {
+                let newOption = {}
+                newOption = collection;
+                newOption.key = keys[i];
+                newOption.name = collection.title + ": " + collection.description;
+                newOption.preview = 'http://api.rohanmenon.com/static/images/' + keys[i] + '.png';
+                modified.push(newOption);
+            }
+        }
+        res.json(modified);
+    } catch (err) {
+        next(err);
+    }
+});
+
+
+app.get("/image/:category", (req, res, next) => {
+    try {
+        const collection = imageCollections[req.params.category];
+        collection.count += 1;
+        res.json(collection);
+    } catch (err) {
+        next(err);
+    }
+});
+
+
 app.listen(3000, () => {
     console.log("Server running on port 3000");
 });
+
+updateAllCollections();
 
 module.exports = app;
