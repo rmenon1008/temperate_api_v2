@@ -5,10 +5,15 @@
             "use": "@now/node"
         }
     ],
-    "routes": [
+    "rewrite": [
         {
             "src": "/(.*)",
-            "dest": "index.js",
+            "dest": "index.js"
+        }
+    ],
+    "headers": [
+        {
+            "source": "/api/(.*)",
             "headers": [
                 {
                     "key": "Access-Control-Allow-Credentials",
