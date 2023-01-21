@@ -1,6 +1,7 @@
 const cors = require('cors');
 const express = require('express');
 const fetch = require('node-fetch-commonjs');
+const path = require('path');
 
 const getWeather = require('./getWeather');
 const { updateAllCollections, updateSingleCollection, imageCollections } = require('./getImage');
