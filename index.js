@@ -72,6 +72,7 @@ app.get("/image/:category", (req, res, next) => {
     }
 });
 
+app.use('/static', express.static(path.join(__dirname, 'static')))
 
 app.listen(3000, () => {
     console.log("Server running on port 3000");
