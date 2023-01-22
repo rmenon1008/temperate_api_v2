@@ -42,7 +42,7 @@ function convertToOldFormat(newFormat) {
                 time_epoch: newFormat.hourly.data[i].time,
                 temp_c: newFormat.hourly.data[i].temperature,
                 feelslike_c: newFormat.hourly.data[i].apparentTemperature,
-                chance_of_rain: newFormat.hourly.data[i].precipProbability,
+                chance_of_rain: newFormat.hourly.data[i].precipProbability * 100,
                 chance_of_snow: 0
             });
         }
