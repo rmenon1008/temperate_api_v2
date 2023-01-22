@@ -47,7 +47,7 @@ const updateSingleCollection = async (collection) => {
         content_filter: 'high',
     }).then(json => {
         const res = json.response[0]
-        collection.url = res.urls.raw + '&fm=jpg&fit=crop&crop=edges&w=2560&q=80';
+        collection.url = res.urls.raw + '&fm=jpg&fit=crop&crop=edges&w=2560&h=1440&q=80';
         collection.credit = res.user.name;
         collection.profile = res.user.links.html + "?utm_source=Temperate&utm_medium=referral";
         collection.count = 0;
@@ -56,7 +56,7 @@ const updateSingleCollection = async (collection) => {
         console.log(err);
     })
 
-    const smallImageUrl = collection.url.replace('w=2560', 'w=19&h=11');
+    const smallImageUrl = collection.url.replace('w=2560&h=1440', 'w=19&h=11');
     const colors = await getBestColors(smallImageUrl);
 
     collection.color = "#" + convert.rgb.hex(colors.sharper);
