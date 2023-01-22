@@ -121,13 +121,13 @@ const addColorVariants = (colors) => {
     return newColors;
 }
 
-function lighten(color, amount = 10, max = 95) {
+function lighten(color, amount = 7, max = 95) {
     let HSL = convert.rgb.hsl(color);
     HSL[2] = Math.min(max, HSL[2] + amount);
     return convert.hsl.rgb(HSL);
 }
 
-function darken(color, amount = 10, min = 18) {
+function darken(color, amount = 7, min = 18) {
     let HSL = convert.rgb.hsl(color);
     HSL[2] = Math.max(min, HSL[2] - amount);
     return convert.hsl.rgb(HSL);
