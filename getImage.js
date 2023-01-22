@@ -89,7 +89,7 @@ const getBestColors = async (url) => {
     
     const brightened = lighten(bestMain, 15, 97);
     const darkened = darken(bestMain, 15, 10);
-    const bestSharper = getContrast(brightened, bestBackground) > getContrast(darkened, bestBackground) ? brightened : darkened;
+    const bestSharper = getContrast(brightened, bestBackground) < getContrast(darkened, bestBackground) ? brightened : darkened;
 
     return {
         main: bestMain,
