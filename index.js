@@ -2,6 +2,7 @@ const cors = require('cors');
 const express = require('express');
 const fetch = require('node-fetch-commonjs');
 const path = require('path');
+const schedule = require('node-schedule');
 
 const getWeather = require('./getWeather');
 const { updateAllCollections, updateSingleCollection, imageCollections } = require('./getImage');
@@ -79,6 +80,9 @@ app.listen(3000, () => {
     console.log("Server running on port 3000");
 });
 
+schedule.scheduleJob('0 3 * * *', () => {
+    updateAllCollections();
+});
 updateAllCollections();
 
 module.exports = app;
