@@ -47,7 +47,7 @@ const updateSingleCollection = async (collection) => {
         content_filter: 'high',
     }).then(json => {
         const res = json.response[0]
-        collection.url = res.urls.raw + '&fm=jpg&fit=crop&w=2560&q=80';
+        collection.url = res.urls.raw + '&fm=jpg&fit=crop&crop=edges&w=2560&q=80';
         collection.credit = res.user.name;
         collection.profile = res.user.links.html + "?utm_source=Temperate&utm_medium=referral";
         collection.count = 0;
@@ -127,7 +127,7 @@ function lighten(color, amount = 7, max = 95) {
     return convert.hsl.rgb(HSL);
 }
 
-function darken(color, amount = 7, min = 18) {
+function darken(color, amount = 7, min = 10) {
     let HSL = convert.rgb.hsl(color);
     HSL[2] = Math.max(min, HSL[2] - amount);
     return convert.hsl.rgb(HSL);
