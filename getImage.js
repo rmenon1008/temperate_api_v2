@@ -66,7 +66,7 @@ const updateSingleCollection = async (collection) => {
 }
 
 const getBestColors = async (url) => {
-    const candidateColors = addColorVariants(await colorThief.getPaletteFromURL(url, 5));
+    const candidateColors = addColorVariants(await colorThief.getPaletteFromURL(url, 3));
     const pixels = await getPixelArrayFromURL(url, startRow=5, endRow=Infinity, startCol=0, endCol=9);
 
     let colorContrastsMain = {};
