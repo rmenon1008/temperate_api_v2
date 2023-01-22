@@ -57,7 +57,7 @@ const updateSingleCollection = async (collection) => {
         console.log(err);
     })
 
-    const smallImageUrl = collection.url.replace('w=2560&h=1440', 'w=19&h=11');
+    const smallImageUrl = collection.url.replace('w=2560&h=1440', 'w=26&h=14');
     const colors = await getBestColors(smallImageUrl);
 
     collection.color = "#" + convert.rgb.hex(colors.sharper);
@@ -67,7 +67,7 @@ const updateSingleCollection = async (collection) => {
 
 const getBestColors = async (url) => {
     const candidateColors = addColorVariants(await colorThief.getPaletteFromURL(url, 5));
-    const pixels = await getPixelArrayFromURL(url, startRow=5, endRow=Infinity, startCol=0, endCol=9);
+    const pixels = await getPixelArrayFromURL(url, startRow=7, endRow=Infinity, startCol=0, endCol=13);
 
     let colorContrastsMain = {};
     for (color in candidateColors) {
