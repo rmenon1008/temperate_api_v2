@@ -45,6 +45,7 @@ const updateSingleCollection = async (collection) => {
         count: 1,
         collections: collection.code,
         content_filter: 'high',
+        orientation: 'landscape',
     }).then(json => {
         const res = json.response[0]
         collection.url = res.urls.raw + '&fm=jpg&fit=crop&crop=edges&w=2560&h=1440&q=80';
