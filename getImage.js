@@ -66,7 +66,7 @@ const updateSingleCollection = async (collection) => {
 }
 
 const getBestColors = async (url) => {
-    const candidateColors = addColorVariants(await colorThief.getPaletteFromURL(url, 3));
+    const candidateColors = addColorVariants(await colorThief.getPaletteFromURL(url, 5));
     const pixels = await getPixelArrayFromURL(url, startRow=5, endRow=Infinity, startCol=0, endCol=9);
 
     let colorContrastsMain = {};
@@ -122,13 +122,13 @@ const addColorVariants = (colors) => {
     return newColors;
 }
 
-function lighten(color, amount = 7, max = 95) {
+function lighten(color, amount = 10, max = 93) {
     let HSL = convert.rgb.hsl(color);
     HSL[2] = Math.min(max, HSL[2] + amount);
     return convert.hsl.rgb(HSL);
 }
 
-function darken(color, amount = 7, min = 10) {
+function darken(color, amount = 10, min = 10) {
     let HSL = convert.rgb.hsl(color);
     HSL[2] = Math.max(min, HSL[2] - amount);
     return convert.hsl.rgb(HSL);
